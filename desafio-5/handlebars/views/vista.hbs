@@ -1,0 +1,35 @@
+<div class="container mt-6">
+    <div class="jumbotron">
+        <h1>Vista Items</h1>
+        <br>
+        {{#if hayProductos }}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                </tr>
+                <!-- foreach para cargar productos -->
+                {{#each productos}}
+                <tr>
+                    <td>
+                        {{this.title}}
+                    </td>
+                    <td>
+                        {{this.price}}
+                    </td>
+                    <td>
+                        {{this.thumbnail}}
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+        {{else}}
+        <h3 class="alert alert-warning">No hay items</h3>
+        {{/if}}
+        <br>
+        <a href="/" type="button" class="btn btn-primary">Cargar nuevo item</a>
+    </div>
+</div>
