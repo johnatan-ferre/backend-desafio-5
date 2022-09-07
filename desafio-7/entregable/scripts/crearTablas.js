@@ -56,5 +56,5 @@ const sqliteClient = knex(config.sqlite3)
     } catch (error) {
         console.log('Error al crear tabla mensajes en sqlite3')
     } finally {
-        sqliteClient.destroy()
+        await sqliteClient.destroy()
     }
